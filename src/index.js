@@ -1,8 +1,6 @@
 import $ from 'jquery';
 
-const store = {
-  dog: []
-}
+const store = { dog: [] };
 
 // Fetch Function
 function fetchApi(randomDogs) {
@@ -17,7 +15,7 @@ function fetchApi(randomDogs) {
 }
 
 function pushToStore(obj) {
-  store.dog = obj;
+  store.dog = obj.message;
 }
 
 function returnImage(src) {
@@ -25,23 +23,21 @@ function returnImage(src) {
 }
 
 function renderImages() {
-  const newArray = store.dog.map(imgSrc => returnImage(imgSrc)).join("");
-  $('main').html(newArray);
+  const renderArray = store.dog.map(imgSrc => returnImage(imgSrc));
+  $('main').html(renderArray);
 }
 
 function handleSubmit() {
-  $('form').on('click', '.submit-button', function(event) {
+  $('form').submit(function(event) {
     event.preventDefault();
     let value = $('#search-amount').val();
-    console.log('working');
     fetchApi(value);
   });
 }
 
-
-function main() {  
-  renderImages,
-  handleSubmit
+function main() {
+  renderImages();
+  handleSubmit();
 }
 
 $(main);
