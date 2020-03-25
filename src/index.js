@@ -33,7 +33,6 @@ function handleSubmit() {
   $('form').on('click', '.submit-button', function(event) {
     event.preventDefault();
     let value = $('#search-amount').val();
-    console.log('working');
     fetchApi(value);
   });
 }

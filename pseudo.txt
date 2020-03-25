@@ -1,0 +1,6 @@
+1. Allow user to put in number of dogs
+2. Get number of dogs they want
+3. Call the API with the number of dogs wanted.
+4. Get array of links
+5. Make an HTML element for each array item
+6. push all HTML elements to 
